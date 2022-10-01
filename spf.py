@@ -1,3 +1,5 @@
+#inicializando valores 
+
 class Graph(): 
         def __init__(self, nodes):
         self.distArray = [0 for i in range(nodes)]
@@ -7,6 +9,8 @@ class Graph():
         self.graph = [[0 for column in range(nodes)]  
                     for row in range(nodes)]
    
+#pensando nas distancias ate o infinito
+
     def dijkstra(self, srcNode):
         for i in range(self.V):      
           self.distArray[i] = self.INF
@@ -24,18 +28,18 @@ class Graph():
   
         self.printSolution(self.distArray)
 
+        #calculando distancia mais curta
     
-    def minDistance(self, distArray, vistSet): 
-  
-        
-        min = self.INF 
-        
+    def minDistance(self, distArray, vistSet):         
+        min = self.INF         
         for v in range(self.V): 
             if distArray[v] < min and vistSet[v] == False: 
                 min = distArray[v] 
                 min_index = v 
   
         return min_index
+
+#printando tabela de distancias
 
     def printSolution(self, distArray): 
         print ("Node \tDistance from 0")
